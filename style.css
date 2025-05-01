@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures consistent sizing */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    background: black;
+    overflow: hidden;
+}
+
+canvas {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    background: black;
+}
+
+/* Overlay element that shows the border with transparent sections */
+#overlay {
+    display: none; /* Temporarily hide the overlay */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the overlay */
+    width: 1100px; /* Match game width */
+    height: 500px; /* Match game height */
+    pointer-events: none; /* So it doesn't interfere with game input */
+    background: url('assets/backgrounds/crowNbunny.png') no-repeat center;
+    background-size: contain; /* Ensure the background fits properly */
+    z-index: 2;
+}
