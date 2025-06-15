@@ -27,18 +27,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: List files in the repository
+        run: ls -R
       - name: Install dependencies
         run: npm install
-        working-directory: ./Birthday-Project # This tells it to go into the folder
       - name: Build
         run: npm run build
-        working-directory: ./Birthday-Project # This tells it to go into the folder
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './Birthday-Project/dist' # This tells it where to find the final 'dist' folder
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
